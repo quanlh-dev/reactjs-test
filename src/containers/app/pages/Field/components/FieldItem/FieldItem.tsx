@@ -19,7 +19,8 @@ export const FieldItem = (props: Props) => {
       </span>
       <span>
         <span className="field-item-offset">
-          {fieldData.offsetFrom}:{fieldData.offsetTo} {`(0)`}
+          {fieldData.offsetFrom}:{fieldData.offsetTo}{' '}
+          {`(${fieldData.offsetTo - fieldData.offsetFrom + 1})`}
         </span>
         <span className="field-item-delete-btn">
           <CancelPresentationIcon />

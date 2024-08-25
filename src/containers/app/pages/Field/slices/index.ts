@@ -3,9 +3,29 @@ import { createSlice } from '@plugins/store/helpers';
 import { useInjectReducer } from '@plugins/store/helpers';
 import { FieldState } from './types';
 import { getFields } from '../../../../../services/field.service';
+import { FieldType, IField } from '../field.constants';
+
+const DEFAULT_ITEMS: IField[] = [
+  {
+    type: FieldType.NUMBER_FIELD_SPEC,
+    name: 'field number 1',
+    offsetFrom: 0,
+    offsetTo: 5,
+    description: 'this is description',
+    id: 1,
+  },
+  {
+    type: FieldType.STRING_FIELD_SPEC,
+    name: 'field string 1',
+    offsetFrom: 1,
+    offsetTo: 3,
+    description: 'this is description',
+    id: 2,
+  },
+];
 
 export const initialState: FieldState = {
-  items: [],
+  items: DEFAULT_ITEMS,
   isLoading: false,
 };
 
@@ -29,7 +49,7 @@ const slice = createSlice({
       })
       .addCase(fetchFieldList.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.items = action.payload;
+        if (action.payload?.length) state.items = action.payload;
       })
       .addCase(fetchFieldList.rejected, (state, action) => {
         state.isLoading = false;

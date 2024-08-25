@@ -1,6 +1,7 @@
 import { MenuItem, Select, SelectProps } from '@mui/material';
 import { IFormik } from '@plugins/formik/types';
 import './SingleSelect.scss';
+import { SelectInputProps } from '@mui/material/Select/SelectInput';
 
 type ISelectOption = {
   label: React.ReactNode;
@@ -16,6 +17,10 @@ type SingleSelectOptions = {
 
 export const SingleSelect = (opts: SingleSelectOptions) => {
   const { formik, name, label, required, options, ...rest } = opts;
+
+  const onChange: SelectInputProps<any>['onChange'] = (e) => {
+    formik.setFieldValue(name, e.target.value);
+  };
   return (
     <div className={`single-select-wrapper`}>
       <label
@@ -26,7 +31,7 @@ export const SingleSelect = (opts: SingleSelectOptions) => {
       <Select
         {...rest}
         value={formik.values[name]}
-        onChange={formik.handleChange}
+        onChange={onChange}
         onBlur={formik.handleBlur}
         displayEmpty
         error={formik.touched[name] && Boolean(formik.errors[name])}

@@ -1,8 +1,5 @@
-import { Layout } from 'antd';
 import { FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-
-const { Sider, Content, Header } = Layout;
 
 type Props = {};
 

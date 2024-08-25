@@ -4,6 +4,7 @@ export enum FieldType {
 }
 
 export type IField = {
+  id?: number;
   name: string;
   type: FieldType;
   offsetFrom: number;

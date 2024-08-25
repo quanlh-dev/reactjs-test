@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
-import { Spin } from 'antd';
 import ErrorBoundary from '@components/Error/ErrorBoundary';
 import { GlobalStyle } from '@styles/global-styles';
 import { Helmet } from 'react-helmet-async';
@@ -24,7 +23,7 @@ function App() {
 
   return (
     <ErrorBoundary catchErrors="always">
-      <React.Suspense fallback={<Spin />}>
+      <React.Suspense fallback={<span>Loading</span>}>
         <Helmet
           titleTemplate="%s - React Boilerplate"
           defaultTitle="React Boilerplate"

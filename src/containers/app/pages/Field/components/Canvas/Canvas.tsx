@@ -12,9 +12,10 @@ import { FieldType } from '../../field.constants';
 import { useTranslation } from 'react-i18next';
 import { InputOffset } from '../InputOffset/InputOffset';
 import { InputTextArea } from '@components/InputTextArea/InputTextArea';
-import { fetchFieldList, useFieldSlice } from '../../slices';
+import { fetchFieldList } from '../../slices';
 import { useDispatch } from 'react-redux';
 import { useSelector } from '@utils/hooks';
+import { postField } from '../../../../../../services/field.service';
 
 export const Canvas = () => {
   const modalFieldDeclarationRef = useRef<ModalRef>(null);
@@ -24,27 +25,26 @@ export const Canvas = () => {
     modalFieldDeclarationRef.current?.openModal();
   };
   const dispatch = useDispatch();
-  const { actions } = useFieldSlice();
   const fieldItems = useSelector((state) => state.field.items);
 
   const formik = useFormik({
     initialValues: {},
     validationSchema: fieldValidationSchema,
-    onSubmit: (values) => {
-      console.log('🚀 ~ Canvas ~ values:', values);
-      // dispatch(addField(values));
+    onSubmit: async (values: any) => {
+      await postField({
+        name: values.name,
+        type: values.type,
+        offsetFrom: values.offsetFrom,
+        offsetTo: values.offsetTo,
+        description: values?.description,
+      });
+      dispatch(fetchFieldList());
       modalFieldDeclarationRef.current?.closeModal();
     },
   });
 
-  useEffect(() => {
-    dispatch(fetchFieldList());
-  }, []);
-
   const onSave = async () => {
-    console.log('🚀 ~ onSave ~ onSave:');
     formik.handleSubmit();
-    debugger;
   };
 
   return (

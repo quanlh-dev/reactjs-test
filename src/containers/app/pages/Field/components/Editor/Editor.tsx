@@ -7,20 +7,21 @@ export const Editor = () => {
   const fieldItems = useSelector((state) => state.field.items);
 
   const jsonView = useMemo(() => {
-    const headers = fieldItems.map((item) => {
-      return {
-        type: item.type,
-        label: item.name,
-        offsetsExpression: {
-          type: 'StaticOffsets',
-          start: item.offsetFrom,
-          end: item.offsetTo,
-        },
-        description: item?.description || '',
-        id: item.id || '',
-        constraints: {},
-      };
-    });
+    const headers =
+      fieldItems?.map((item) => {
+        return {
+          type: item.type,
+          label: item.name,
+          offsetsExpression: {
+            type: 'StaticOffsets',
+            start: item.offsetFrom,
+            end: item.offsetTo,
+          },
+          description: item?.description || '',
+          id: item.id || '',
+          constraints: {},
+        };
+      }) ?? [];
     return {
       headers,
       body: {},
