@@ -1,0 +1,72 @@
+@import 'assets/scss/variable.scss';
+.field-timeline-container {
+  height: 34px;
+  background-color: #e6e9ef;
+  padding: 4px 0px;
+  .ant-picker.ant-picker-borderless {
+    background-color: $background-field !important;
+  }
+  .ant-picker-input input {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: bold !important;
+    color: #fff !important;
+    text-align: center;
+  }
+  .ant-picker-range-separator {
+    padding: 0px 3px;
+  }
+  .hover-on-set-date {
+    white-space: nowrap;
+  }
+  .hover-on-set-date::after,
+  .date-initial::after {
+    content: '-';
+  }
+  .field-timeline {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 20px;
+    font-weight: bold !important;
+    color: #fff !important;
+  }
+  .icon-timeline {
+    width: 20px;
+    span {
+      color: #e6e9ef;
+      background-color: #e6e9ef;
+      -moz-border-radius: 100px;
+      -webkit-border-radius: 100px;
+    }
+    span:hover {
+      background: gray;
+      color: $background-field;
+    }
+  }
+  .icon-timeline:hover {
+    span {
+      background: gray;
+      color: $background-field;
+    }
+  }
+  .field-timeline:hover {
+    .hover-on-set-date::after {
+      content: 'Set date';
+      cursor: pointer;
+    }
+  }
+}
+
+.field-timeline-container:hover {
+  .icon-timeline {
+    span {
+      background: gray;
+      color: $background-field;
+    }
+  }
+}
+
+.field-timeline {
+  //   background-color: $background-field !important;
+}

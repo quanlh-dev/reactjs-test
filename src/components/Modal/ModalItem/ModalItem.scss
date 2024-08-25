@@ -1,0 +1,19 @@
+.modal-item {
+  .modal-item__field {
+    margin-top: 10px;
+  }
+  .modal-item__icon_name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    padding-right: 3px;
+  }
+  .modal-item__name {
+    margin-left: 5px;
+  }
+
+  .modal-item__field_container {
+    padding: 0 10px 10px 10px;
+  }
+}

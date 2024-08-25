@@ -1,0 +1,47 @@
+@import 'assets/scss/variable.scss';
+
+.user-authorization-container {
+  .user-authorization-toolbar {
+    // margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // height: 25px;
+    margin-bottom: 10px;
+    .user-authorization-title {
+      font-weight: bold;
+      color: $primary-color;
+    }
+  }
+}
+
+.modal-add-user-wrapper {
+  .modal-add-user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.user-authorization-btn-add-member {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding-right: 25px;
+  padding-bottom: 20px;
+}
+
+.user-authorization-add-member {
+  &:hover {
+    opacity: 0.7;
+  }
+  cursor: pointer;
+  padding: 3px 5px;
+  border-radius: 4px;
+  background-color: $primary-color;
+  color: #fff;
+}

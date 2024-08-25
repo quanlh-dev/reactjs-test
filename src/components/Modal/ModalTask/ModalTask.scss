@@ -1,0 +1,27 @@
+.modal-task-container {
+  height: 85vh;
+  padding: 15px;
+  .modal-task__field {
+    margin-top: 10px;
+  }
+  .modal-task__icon_name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    padding-right: 3px;
+  }
+  .modal-task__name {
+    margin-left: 5px;
+  }
+
+  .modal-task__field_container {
+    // padding: 0 10px 10px 10px;
+  }
+
+  .modal-task-btn-create-item {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

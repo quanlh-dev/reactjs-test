@@ -1,0 +1,36 @@
+@import 'assets/scss/variable.scss';
+
+.__field-rangenumber-container {
+  height: $height-field;
+  background-color: #e6e9ef;
+  padding: 4px 0px;
+  cursor: pointer;
+  .__field-rangenumber-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .__field-rn-icon {
+    color: $primary-color;
+    margin: 0px 5px;
+  }
+}
+
+.popover-field-rangenumber {
+  .popover {
+    border: none;
+  }
+  border-radius: 4px;
+  .field-rn-input {
+    max-width: 100px;
+  }
+}
+
+.__field-rangenumber-overlay {
+  // min-width: fit-content !important;
+  box-shadow: $box-shadow-field;
+  border-radius: 4px;
+}

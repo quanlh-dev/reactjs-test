@@ -1,0 +1,52 @@
+@import 'assets/scss/variable.scss';
+
+.__field-text-container {
+  height: $height-field;
+  // padding: 3px 3px;
+  .__field-text-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  &:hover {
+    .__field-text-icon {
+      display: block;
+    }
+    input {
+      border: 1px dashed $background-field;
+    }
+  }
+
+  input {
+    &:focus {
+      background-color: #fff;
+      border: 1px dashed $background-field !important;
+      outline: 0px solid transparent;
+      ~ .__field-text-icon {
+        display: none;
+      }
+    }
+  }
+  input {
+    outline: 0px solid transparent;
+    width: 100%;
+    border: none;
+    text-align: center;
+    background-color: $background-hover;
+    height: 100%;
+  }
+  .__field-text-icon {
+    span {
+      color: $primary-color !important;
+    }
+    display: none;
+    pointer-events: none;
+    color: #000;
+    position: absolute;
+    top: 6px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 32px;
+  }
+}

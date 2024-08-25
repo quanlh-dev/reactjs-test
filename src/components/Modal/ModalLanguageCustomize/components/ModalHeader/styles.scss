@@ -1,0 +1,22 @@
+.header-modal-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f0faff;
+  border-radius: 2px;
+  padding: 18px 25px;
+  border-bottom: 0.942602px solid #a9e3ff;
+  span.modal-title {
+    font-weight: bold;
+    font-size: 20px;
+    color: #272727;
+    opacity: 0.8;
+  }
+  .header-modal__side--right {
+    display: flex;
+    align-items: center;
+    button.header-modal__button {
+      margin-right: 24px;
+    }
+  }
+}

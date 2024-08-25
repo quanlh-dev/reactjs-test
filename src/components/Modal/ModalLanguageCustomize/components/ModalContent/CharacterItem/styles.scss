@@ -1,0 +1,11 @@
+.character-item-wrapper {
+  display: flex;
+  align-items: center;
+  .character-title {
+    font-size: 14px;
+    color: #272727;
+  }
+  .ant-row.ant-form-item {
+    margin: 0px;
+  }
+}

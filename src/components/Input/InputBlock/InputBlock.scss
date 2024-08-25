@@ -1,0 +1,15 @@
+@import 'assets/scss/variable.scss';
+.input-block-container {
+  .input-block {
+    border: 1px solid transparent;
+
+    &:focus {
+      outline: 0px solid transparent;
+      border: 1px dashed $background-field;
+    }
+
+    &:hover {
+      border: 1px dashed $background-field;
+    }
+  }
+}

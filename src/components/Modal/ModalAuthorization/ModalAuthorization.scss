@@ -1,0 +1,58 @@
+@import 'assets/scss/variable.scss';
+
+.tab-authorization-wrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.nav-tab-authorization {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  .nav-item-tab-authorization {
+    margin-right: 5px;
+    padding: 5px 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    span {
+      margin-left: 5px;
+    }
+
+    &:hover {
+      // opacity: 0.7;
+      //   color: #000;
+      //   background-color: $background-hover;
+    }
+  }
+  .nav-item-tab-authorization-active {
+    background-color: $primary-color;
+    color: #fff;
+  }
+}
+
+.tag-role-wrapper {
+  display: inline-block;
+}
+
+.tag-role {
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  border: 1px solid $background-hover;
+  line-height: 20px;
+  font-size: 13px;
+  margin: 2px;
+  border-radius: 4px;
+  .tag-role-close-icon {
+    font-size: 10px;
+  }
+}
+
+.modal-authorization {
+  .ant-modal-body {
+    padding: 0 !important;
+  }
+}

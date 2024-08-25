@@ -1,0 +1,138 @@
+@import 'assets/scss/variable.scss';
+
+.modal-field-select-update {
+  .ant-drawer-content-wrapper {
+    width: 331px !important;
+  }
+
+  .modal-field-select-update__close-icon {
+    position: absolute;
+    left: -30px;
+    top: 10px;
+    padding: 5px;
+    background: #fff;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .ant-drawer-content,
+  .ant-drawer-body {
+    padding: 0px !important;
+    overflow: unset !important;
+  }
+
+  .modal-field-select-update__action_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    .modal-field-select-update__action_title_right {
+      width: fit-content;
+    }
+  }
+
+  .modal-field-select-update__item {
+    height: 34px;
+    border-bottom: 1px solid $background-hover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .modal-field-select-update__item_right {
+      width: 40px;
+    }
+
+    .modal-field-select-update__item_left {
+      display: flex;
+      align-items: center;
+
+      .modal-field-select-update__item_color {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-left: 3px;
+        margin-right: 3px;
+        cursor: pointer;
+      }
+
+      .modal-field-select-update__item_icon_edit {
+        font-size: 10px;
+        color: $primary-color;
+        margin-left: 3px;
+        cursor: pointer;
+      }
+
+      input {
+        // border: none;
+        background-color: #fff;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .modal-field-select-is-using {
+      cursor: not-allowed;
+    }
+
+    .modal-field-select-is-notusing {
+      cursor: pointer;
+    }
+
+    .modal-field-select-update-icon-delete-container {
+      .modal-field-select-icon-update-delete {
+        visibility: hidden;
+        font-size: 10px;
+      }
+      &:hover {
+        .modal-field-select-icon-update-delete {
+          visibility: visible;
+        }
+      }
+      padding: 1px;
+    }
+  }
+
+  .modal-field-select-update_add_item {
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    .modal-field-select-update_add_item_icon {
+      //   background-color: $primary-color;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      color: #fff;
+      cursor: pointer;
+    }
+    input {
+      height: 34px;
+      //   margin-left: 10px;
+      width: 220px;
+      border: 1px dashed $background-field;
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      background-color: $primary-color;
+      border-radius: 4px;
+      outline: none;
+      border: none;
+      color: #fff;
+      height: 34px;
+    }
+  }
+
+  .modal-field-select-color-picker {
+    margin-top: 20px;
+  }
+}

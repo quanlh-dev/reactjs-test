@@ -1,0 +1,55 @@
+@import 'assets/scss/variable.scss';
+
+.field-progress-container {
+  padding: 5px 5px;
+  height: 34px;
+  background-color: $background-hover;
+  box-sizing: border-box;
+  .field-progress {
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .field-progress-bar {
+    // width: calc(100% - 35px);
+    width: 100%;
+    height: 100%;
+    border: 1px solid $primary-color;
+  }
+
+  .field-progress-number {
+    font-size: 13px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .field-progress-number {
+    font-size: 13px;
+    height: 100%;
+    position: absolute;
+    right: 8px;
+    color: #000;
+  }
+
+  .field-progress-active {
+    height: 100%;
+    background-color: $primary-color;
+  }
+}
+
+.prog-slider-container {
+  box-shadow: $box-shadow-field;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .field-progress-step-input {
+    margin-left: 10px;
+  }
+}

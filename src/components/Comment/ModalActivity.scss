@@ -1,0 +1,28 @@
+.activity-modal-task {
+  .activity-modal-task__title {
+    margin-top: 10px;
+  }
+  .ant-drawer-content-wrapper {
+    width: 600px !important;
+    // width: 40vw !important;
+  }
+
+  .activity-modal-task__close-icon {
+    position: absolute;
+    left: -30px;
+    top: 10px;
+    padding: 5px;
+    background: #fff;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .ant-drawer-content,
+  .ant-drawer-body {
+    padding: 0px !important;
+    overflow: unset !important;
+  }
+}

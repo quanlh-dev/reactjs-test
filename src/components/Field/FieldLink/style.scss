@@ -1,0 +1,40 @@
+.field-link {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  border-radius: 2px;
+  background-color: rgba(245, 246, 248, 1);
+
+  &:hover {
+    background-color: rgba(230, 233, 239, 1);
+  }
+  &__overlay {
+    width: 96%;
+    height: 80%;
+    &-background {
+      border: 1px dashed #c7c7c7;
+    }
+    &-text {
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  &__menu {
+    padding: 16px;
+    &-label {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    .ant-input {
+      margin-bottom: 16px;
+      width: 216px;
+      height: 40px;
+      padding: 0 16px;
+    }
+  }
+}

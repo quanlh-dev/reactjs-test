@@ -1,0 +1,14 @@
+$background-hover: #e6e9ef;
+$background-focus: rgb(186, 231, 255);
+$background-menu: #f5f6f8;
+$font-size-icon: 20px;
+$primary-color: #0073ea;
+$background-field: #cecfd1;
+$height-field: 34px;
+$box-shadow-field: 0 8px 16px 0px rgb(0 0 0 / 32%);
+$main-color: #32a1c8;
+@mixin filter-tabview {
+  background-color: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
