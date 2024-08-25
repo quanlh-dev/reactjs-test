@@ -3,7 +3,7 @@ import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import './Canvas.scss';
 import { FieldItem } from '../FieldItem/FieldItem';
 import { Modal, ModalRef } from '@components/Modal/Modal';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { InputText } from '@components/InputText/InputText';
 import { useFormik } from '../../../../../../plugins/formik/useFormik';
 import { fieldValidationSchema } from '../../schemas/field.schema';
@@ -12,6 +12,9 @@ import { FieldType } from '../../field.constants';
 import { useTranslation } from 'react-i18next';
 import { InputOffset } from '../InputOffset/InputOffset';
 import { InputTextArea } from '@components/InputTextArea/InputTextArea';
+import { fetchFieldList, useFieldSlice } from '../../slices';
+import { useDispatch } from 'react-redux';
+import { useSelector } from '@utils/hooks';
 
 export const Canvas = () => {
   const modalFieldDeclarationRef = useRef<ModalRef>(null);
@@ -20,23 +23,37 @@ export const Canvas = () => {
   const onOpenModalFieldDeclaration = () => {
     modalFieldDeclarationRef.current?.openModal();
   };
+  const dispatch = useDispatch();
+  const { actions } = useFieldSlice();
+  const fieldItems = useSelector((state) => state.field.items);
 
   const formik = useFormik({
-    initialValues: {
-      email: 'foobar@example.com',
-      password: 'foobar',
-    },
+    initialValues: {},
     validationSchema: fieldValidationSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      console.log('🚀 ~ Canvas ~ values:', values);
+      // dispatch(addField(values));
+      modalFieldDeclarationRef.current?.closeModal();
     },
   });
+
+  useEffect(() => {
+    dispatch(fetchFieldList());
+  }, []);
+
+  const onSave = async () => {
+    console.log('🚀 ~ onSave ~ onSave:');
+    formik.handleSubmit();
+    debugger;
+  };
 
   return (
     <Area header="Canvas">
       <div className="canvas-container">
         <div className="canvas-content">
-          <FieldItem />
+          {fieldItems?.map((item, index) => {
+            return <FieldItem key={item?.id ?? index} fieldData={item} />;
+          })}
         </div>
         <div className="canvas-des">
           <div
@@ -47,7 +64,11 @@ export const Canvas = () => {
           </div>
         </div>
       </div>
-      <Modal title="Field Declaration" modalRef={modalFieldDeclarationRef}>
+      <Modal
+        title="Field Declaration"
+        modalRef={modalFieldDeclarationRef}
+        onSave={onSave}
+      >
         <div className="field-form">
           <InputText required label="Name" name="name" formik={formik} />
           <SingleSelect

@@ -17,7 +17,7 @@ export const Button = (props: ButtonProps) => {
   const bgColor = useMemo(() => {
     switch (type) {
       case 'primary':
-        return '#A06227';
+        return '#BE7530';
       case 'secondary':
         return '#49535E';
       default:

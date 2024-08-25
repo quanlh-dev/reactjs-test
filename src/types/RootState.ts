@@ -1,5 +1,6 @@
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
+import { FieldState } from '@containers/app/pages/Field/slices/types';
 import { ProfileState } from '@containers/authentication/pages/Auth/slice/types';
 import { ThemeState } from '@styles/theme/slice/types';
 
@@ -12,5 +13,6 @@ import { ThemeState } from '@styles/theme/slice/types';
 export type RootState = {
   theme?: ThemeState;
   profile: ProfileState;
+  field: FieldState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 };

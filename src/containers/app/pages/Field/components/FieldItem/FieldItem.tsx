@@ -1,20 +1,26 @@
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
 import './FieldItem.scss';
+import { IField } from '../../field.constants';
 
-export const FieldItem = () => {
+type Props = {
+  fieldData: IField;
+};
+
+export const FieldItem = (props: Props) => {
+  const { fieldData } = props;
   return (
     <div className="field-item">
       <span>
         <span>
           <ListAltIcon />
         </span>
-        <span className="field-item-name">
-          Field 1 Field 1Field 1Field 1Field 1Field 1Field
-        </span>
+        <span className="field-item-name">{fieldData.name}</span>
       </span>
       <span>
-        <span className="field-item-offset">0:4 {`(5)`}</span>
+        <span className="field-item-offset">
+          {fieldData.offsetFrom}:{fieldData.offsetTo} {`(0)`}
+        </span>
         <span className="field-item-delete-btn">
           <CancelPresentationIcon />
         </span>

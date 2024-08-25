@@ -9,7 +9,7 @@ type InputTextAreaOptions = {
 };
 
 export const InputTextArea = (opts: InputTextAreaOptions) => {
-  const { formik, name, label, required, ...rest } = opts;
+  const { formik, name, label, required } = opts;
 
   return (
     <div className={`input-text-area-wrapper`}>
@@ -19,6 +19,7 @@ export const InputTextArea = (opts: InputTextAreaOptions) => {
         {label}
       </label>
       <textarea
+        name={name}
         value={formik.values[name]}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
