@@ -1,0 +1,21 @@
+.field-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #afafad;
+    border-radius: 3px;
+    background-color: #fbfcf9;
+    padding: 8px;
+    .field-item-name {
+        margin-left: 4px;
+        color: black;
+    }
+
+    .field-item-offset {
+        margin-right: 32px;
+    }
+
+    .field-item-delete-btn {
+        cursor: pointer;
+    }
+}

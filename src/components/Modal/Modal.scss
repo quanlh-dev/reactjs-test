@@ -1,0 +1,21 @@
+.modal-common-container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal-common-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.modal-common-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+        cursor: pointer;
+    }
+}

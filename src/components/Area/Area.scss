@@ -1,0 +1,14 @@
+.__area {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+    .__area-header-container {
+        display: flex;
+        color: #e4a366;
+        border-bottom: 1px solid #bdbdbd;
+        .__area-header {
+            border-bottom: 2px solid #e4a366;
+        }
+    }
+    // box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}

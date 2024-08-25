@@ -1,0 +1,28 @@
+.canvas-content {
+    background-color: #7f8d9e;
+    border-radius: 3px;
+    padding: 8px;
+    margin-top: 8px;
+    min-height: 160px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.canvas-container {
+    min-width: 100%;
+    display: flex;
+    .canvas-des {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .canvas-des-add-btn {
+        color: #dac0a9;
+        cursor: pointer;
+        margin-bottom: 12px;
+        margin-left: 12px;
+    }
+}
