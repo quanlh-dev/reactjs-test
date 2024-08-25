@@ -10,6 +10,7 @@ import './InputText.scss';
 type InputTextOptions = {
   formik: IFormik;
   name: string;
+  required?: boolean;
 } & {
   /**
    * The variant to use.
@@ -19,9 +20,12 @@ type InputTextOptions = {
 } & Omit<TextFieldProps, 'variant'>;
 
 export const InputText = (opts: InputTextOptions) => {
-  const { formik, name, label, ...rest } = opts;
+  const { formik, name, label, required, ...rest } = opts;
   return (
-    <div>
+    <div className={`input-text-wrapper`}>
+      <label className={`input-text-label ${required ? 'label-required' : ''}`}>
+        {label}
+      </label>
       <TextField
         fullWidth
         name={name}

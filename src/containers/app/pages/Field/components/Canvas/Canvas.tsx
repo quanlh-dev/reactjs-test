@@ -7,9 +7,15 @@ import { useRef } from 'react';
 import { InputText } from '@components/InputText/InputText';
 import { useFormik } from '../../../../../../plugins/formik/useFormik';
 import { fieldValidationSchema } from '../../schemas/field.schema';
+import { SingleSelect } from '@components/SingleSelect/SingleSelect';
+import { FieldType } from '../../field.constants';
+import { useTranslation } from 'react-i18next';
+import { InputOffset } from '../InputOffset/InputOffset';
+import { InputTextArea } from '@components/InputTextArea/InputTextArea';
 
 export const Canvas = () => {
   const modalFieldDeclarationRef = useRef<ModalRef>(null);
+  const { t } = useTranslation();
 
   const onOpenModalFieldDeclaration = () => {
     modalFieldDeclarationRef.current?.openModal();
@@ -42,8 +48,24 @@ export const Canvas = () => {
         </div>
       </div>
       <Modal title="Field Declaration" modalRef={modalFieldDeclarationRef}>
-        <div>
-          <InputText name="name" formik={formik} />
+        <div className="field-form">
+          <InputText required label="Name" name="name" formik={formik} />
+          <SingleSelect
+            options={Object.values(FieldType).map((f) => ({
+              value: f,
+              label: t(`fieldType.${f}`),
+            }))}
+            name="type"
+            label="Type"
+            required
+            formik={formik}
+          />
+          <InputOffset formik={formik} />
+          <InputTextArea
+            label="Description"
+            name="description"
+            formik={formik}
+          />
         </div>
       </Modal>
     </Area>

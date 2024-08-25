@@ -1,0 +1,28 @@
+.input-offset-label {
+    color: #95999c;
+    &.label-required::before {
+        content: "*";
+        color: rgb(173, 96, 96);
+    }
+}
+
+.input-offset-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .input-offset-content {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+    }
+    .input-offset-content-item {
+        color: #95999c;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        input {
+            width: 60px;
+        }
+    }
+}

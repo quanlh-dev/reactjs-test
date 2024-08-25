@@ -16,5 +16,8 @@
     "title": "Quick Scaffolding",
     "description": "Automate the creation of components, features, routes, selectors and sagas - and their tests - right from the CLI! Avoid fighting the glue of your code and focus on your app!"
   },
-  "abc": "abc"
+  "fieldType": {
+    "StringFieldSpec": "String",
+    "NumberFieldSpec": "Number"
+  }
 }

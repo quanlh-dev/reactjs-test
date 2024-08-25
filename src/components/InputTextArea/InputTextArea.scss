@@ -1,0 +1,22 @@
+.input-text-area-label {
+    // margin-bottom: 4px;
+    color: #95999c;
+    &.label-required::before {
+        content: "*";
+        color: rgb(173, 96, 96);
+    }
+}
+
+.input-text-area-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    textarea {
+        border: 1px solid #95999c;
+        height: 100px;
+        border-radius: 3px;
+        &:focus {
+            outline: none;
+        }
+    }
+}

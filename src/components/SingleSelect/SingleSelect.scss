@@ -1,5 +1,4 @@
-.input-text-label {
-    // margin-bottom: 4px;
+.single-select-label {
     color: #95999c;
     &.label-required::before {
         content: "*";
@@ -7,7 +6,7 @@
     }
 }
 
-.input-text-wrapper {
+.single-select-wrapper {
     display: flex;
     flex-direction: column;
     gap: 4px;
