@@ -4,7 +4,7 @@ const options: AxiosRequestConfig = {
   headers: {
     'Content-Type': 'application/json',
   },
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: 'http://18.141.205.178:3000',
   responseType: 'json',
 };
 
