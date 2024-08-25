@@ -4,7 +4,7 @@ const options: AxiosRequestConfig = {
   headers: {
     'Content-Type': 'application/json',
   },
-  baseURL: 'http://18.141.205.178:3000',
+  baseURL: 'https://api-demo.dpaexpress.xyz',
   responseType: 'json',
 };
 
