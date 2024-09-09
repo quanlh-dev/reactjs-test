@@ -9,14 +9,6 @@ export default defineConfig({
     port: 2023,
     open: './',
   },
-  // optimizeDeps: {
-  //   exclude: [
-  //     '@fortawesome/fontawesome-free',
-  //     '@fortawesome/react-fontawesome',
-  //     '@fortawesome/free-solid-svg-icons',
-  //     '@fortawesome/fontawesome-svg-core',
-  //   ],
-  // },
   resolve: {
     alias: [
       {

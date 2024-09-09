@@ -1,13 +1,8 @@
-import { FC, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { FC } from 'react';
 
 type Props = {};
 
 const Home: FC<Props> = (props) => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {}, [dispatch]);
-
   return <div>Home</div>;
 };
 

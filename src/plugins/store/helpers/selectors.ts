@@ -1,15 +1,10 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { initialState as themeState } from '@styles/theme/slice';
-import { initialState as profileState } from '@containers/authentication/pages/Auth/slice';
 import { initialState as fieldState } from '@containers/app/pages/Field/slices/index';
-
 import { RootState } from '@types';
 import get from 'lodash/get';
 import { cloneDeep } from 'lodash';
 
 const defaultRootState: RootState = {
-  theme: themeState,
-  profile: profileState,
   field: fieldState,
 };
 

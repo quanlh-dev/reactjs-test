@@ -11,6 +11,7 @@ type Props = {};
 const Field: FC<Props> = (props) => {
   const dispatch = useDispatch();
   useFieldSlice();
+
   useEffect(() => {
     dispatch(fetchFieldList());
   }, []);

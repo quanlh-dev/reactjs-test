@@ -1,14 +1,9 @@
 import type { Router } from '@remix-run/router';
 import { lazyLoad } from '@utils/loadable';
 import { createBrowserRouter, Navigate, RouteObject } from 'react-router-dom';
-import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
 export enum RouteNames {
-  LOGIN = 'LOGIN',
-  HOME = 'HOME',
-  DASHBOARD = 'DASHBOARD',
-  SETTING = 'SETTING',
   ROOT = 'ROOT',
   FIELD = 'FIELD',
 }
@@ -22,33 +17,19 @@ export const routes: RouteConfig[] = [
     isPrivate: false,
     path: '/',
     name: RouteNames.ROOT,
-    component: <Navigate to={'/app'} />,
-  },
-  {
-    isPrivate: false,
-    path: 'login',
-    name: RouteNames.LOGIN,
-    LazyComponent: lazyLoad(async () => import('@authentication/pages/Login')),
+    component: <Navigate to={'/field'} />,
   },
   {
     isPrivate: false, // TODO:
-    path: 'app',
-    name: RouteNames.HOME,
+    path: 'field',
+    name: RouteNames.FIELD,
     LazyComponent: lazyLoad(async () => import('@app/pages/Field/index')),
   },
 ];
 
 const convertRoute = (route: RouteConfig): RouteObject => {
-  const {
-    name,
-    path,
-    component,
-    LazyComponent,
-    action,
-    loader,
-    children,
-    isPrivate,
-  } = route as IRouteConfig;
+  const { name, path, component, LazyComponent, action, loader, children } =
+    route as IRouteConfig;
 
   const routeObject: RouteObject = {
     path,
@@ -62,19 +43,11 @@ const convertRoute = (route: RouteConfig): RouteObject => {
   if (component) {
     routeObject.element = component;
   } else {
-    if (isPrivate) {
-      MyElement = (
-        <PrivateRoute>
-          <LazyComponent />
-        </PrivateRoute>
-      );
-    } else {
-      MyElement = (
-        <PublicRoute>
-          <LazyComponent />
-        </PublicRoute>
-      );
-    }
+    MyElement = (
+      <PublicRoute>
+        <LazyComponent />
+      </PublicRoute>
+    );
     routeObject.element = MyElement;
   }
 
