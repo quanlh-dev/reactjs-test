@@ -1,21 +1,8 @@
-import {
-  useInjectReducer as useReducer,
-  useInjectSaga as useSaga,
-} from 'redux-injectors';
-import {
-  InjectReducerParams,
-  InjectSagaParams,
-  RootStateKeyType,
-} from './injector-typings';
-
-/* Wrap redux-injectors with stricter types */
+import { useInjectReducer as useReducer } from 'redux-injectors';
+import { InjectReducerParams, RootStateKeyType } from './injector-typings';
 
 export function useInjectReducer<Key extends RootStateKeyType>(
   params: InjectReducerParams<Key>,
 ) {
   return useReducer(params);
-}
-
-export function useInjectSaga(params: InjectSagaParams) {
-  return useSaga(params);
 }

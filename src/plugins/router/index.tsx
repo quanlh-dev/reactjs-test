@@ -14,13 +14,11 @@ const DEFAULT_ROUTE_CONFIG: RouteConfig = {
 
 export const routes: RouteConfig[] = [
   {
-    isPrivate: false,
     path: '/',
     name: RouteNames.ROOT,
     component: <Navigate to={'/field'} />,
   },
   {
-    isPrivate: false, // TODO:
     path: 'field',
     name: RouteNames.FIELD,
     LazyComponent: lazyLoad(async () => import('@app/pages/Field/index')),
